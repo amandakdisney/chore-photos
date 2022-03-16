@@ -1,0 +1,7 @@
+{
+  "name": "chore-photos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
