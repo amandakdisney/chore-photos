@@ -5,6 +5,8 @@ import { map } from 'rxjs/operators';
 
 import { Room } from '../interfaces/room';
 
+import * as cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +15,10 @@ export class RoomService {
   private rooms: Room[] = [];
   private loaded: boolean = false;
 
-  constructor(private storage: Storage) { }
+  constructor(private storage: Storage) {
+    this.storage.defineDriver(cordovaSQLiteDriver);
+    this.storage.create();
+  }
 
   async load(): Promise<void> {
     if (!this.loaded) {
