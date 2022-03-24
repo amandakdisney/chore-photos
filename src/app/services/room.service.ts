@@ -16,7 +16,14 @@ export class RoomService {
   constructor(private storage: Storage) { }
 
   async load(): Promise<void> {
-    return Promise.resolve();
+    if (!this.loaded) {
+      const rooms = await this.storage.get("rooms");
+      if (rooms !== null) {
+        this.rooms = rooms;
+        this.rooms$.next(this.rooms);
+      }
+      this.loaded = true;
+    }
   }
 
   getRooms(): Observable<Room[]> {
@@ -59,7 +66,7 @@ export class RoomService {
 
   save(): Promise<void> {
     this.rooms$.next(this.rooms);
-    return Promise.resolve();
+    return this.storage.set("rooms", this.rooms);
   }
   // name might need to change to title
   generateSlug(name: string): string {
