@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+    <ion-title>{{ room.name }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="medium" defaultHref="/rooms"></ion-back-button>
+    </ion-buttons>
+
+    <!-- <ion-buttons slot="end">
+      <ion-button (click)="restartRoom()">
+        <ion-icon slot="icon-only" name="refresh"></ion-icon>
+      </ion-button> -->
+
+      <!-- MIGHT REPLACE W/ CAMERA FUNCTIONALITY -->
+      <!-- <ion-button (click)="addPhoto()">
+        <ion-icon slot="icon-only" name="camera"></ion-icon>
+      </ion-button> -->
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
+        <ion-img [src]="photo.webviewPath"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addPhotoToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+  <!-- <ion-list lines="none">
+    <ion-item-sliding *ngFor="let item of checklist.items">
+      <ion-item color="success">
+        <ion-label>
+          <ion-icon size="large" [name]="item.ionicon"></ion-icon>
+          {{ item.title }}
+        </ion-label>
+        <ion-checkbox
+          color="light"
+          [checked]="item.checked"
+          (ionChange)="toggleItem(item)"
+        ></ion-checkbox>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="light" (click)="resetItemIcon(item)">
+          <ion-icon slot="icon-only" name="cog-outline"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="light" (click)="renameItem(item)">
+          <ion-icon slot="icon-only" name="clipboard"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="removeItem(item)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list> -->
+</ion-content>

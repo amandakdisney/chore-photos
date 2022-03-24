@@ -1,20 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="light">
     <ion-title>
-      Blank
+      Rooms
     </ion-title>
+    <!-- Button to add a room -->
+    <ion-buttons slot="end">
+      <ion-button (click)="addRoom()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true">  <!-- content area will scroll behind toolbar instead of being cut off -->
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title color="light" size="large">Rooms</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-list lines="none">
+      <ion-item-sliding *ngFor="let room of rooms">  <!-- item that displays w/out sliding -->
+        <ion-item routerLink="/rooms/{{room.id}}" routerDirection="forward">
+          <ion-label>{{ room.name }}</ion-label>
+        </ion-item>
+        
+        <!-- Edit room name -->
+        <ion-item-options slide="end">
+          <ion-item-option color="warning" (click)="renameRoom(room)">
+            <ion-icon slot="icon-only" name="clipboard"></ion-icon>
+          </ion-item-option>
+          <!-- Delete room -->
+          <ion-item-option color="danger" (click)="removeRoom(room)">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
   </div>
 </ion-content>
