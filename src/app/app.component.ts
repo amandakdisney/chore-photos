@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { StatusBar } from '@capacitor/status-bar';
+// import { StatusBar } from '@capacitor/status-bar';
 import { RoomService } from './services/room.service';
 
 @Component({
@@ -20,8 +20,8 @@ export class AppComponent {
       console.warn(err);
     });
     // sets color of status bar at top of device screen
-    StatusBar.setBackgroundColor({ color: '#2dd36f' }).catch((err) => {
-      console.warn(err);
-    });
+    // StatusBar.setBackgroundColor({ color: '#2dd36f' }).catch((err) => {
+    //   console.warn(err);
+    // });
   }
 }

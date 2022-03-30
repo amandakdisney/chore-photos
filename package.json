@@ -15,7 +15,7 @@
   "dependencies": {
     "@angular/common": "~13.2.2",
     "@angular/core": "~13.2.2",
-    "@angular/fire": "^7.2.1",
+    "@angular/fire": "^7.3.0",
     "@angular/forms": "~13.2.2",
     "@angular/platform-browser": "~13.2.2",
     "@angular/platform-browser-dynamic": "~13.2.2",
@@ -35,7 +35,7 @@
     "@ionic/storage": "^3.0.6",
     "@ionic/storage-angular": "^3.0.6",
     "cordova-sqlite-storage": "^6.0.0",
-    "firebase": "^9.6.8",
+    "firebase": "^9.6.10",
     "localforage-cordovasqlitedriver": "^1.8.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",

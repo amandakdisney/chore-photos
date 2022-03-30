@@ -20,7 +20,15 @@ import { SplashScreen } from '@capacitor/splash-screen';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],  // environment.firebase  changed to environment.firebaseConfig??
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(), AngularFireModule.initializeApp(environment.firebaseConfig, 'chore-photos'), ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'chore-photos'),
+    AngularFirestoreModule,
+    AngularFireStorageModule
+  ],
   providers: [
     // StatusBar,
     // SplashScreen,

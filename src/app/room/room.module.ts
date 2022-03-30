@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RoomPageRoutingModule } from './room-routing.module';
-
 import { RoomPage } from './room.page';
+import { FileSizeFormatPipe } from './file-size-format.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { RoomPage } from './room.page';
     IonicModule,
     RoomPageRoutingModule
   ],
-  declarations: [RoomPage]
+  declarations: [RoomPage, FileSizeFormatPipe]
 })
 export class RoomPageModule {}

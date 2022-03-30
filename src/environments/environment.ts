@@ -6,11 +6,11 @@ export const environment = {
   production: false,
   firebaseConfig: {
     apiKey: "AIzaSyDnyPUU7qVlJ4_X3lL85JzCw-uGOtOmcqs",
-    authDomain: "chore-photos.firebaseapp.com",
-    projectId: "chore-photos",
-    storageBucket: "chore-photos.appspot.com",
-    messagingSenderId: "642178262911",
-    appId: "1:642178262911:web:8f46d89be4ef3048d6dc4a"
+  authDomain: "chore-photos.firebaseapp.com",
+  projectId: "chore-photos",
+  storageBucket: "chore-photos.appspot.com",
+  messagingSenderId: "642178262911",
+  appId: "1:642178262911:web:8f46d89be4ef3048d6dc4a"
   }
 };
 
