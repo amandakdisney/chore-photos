@@ -93,7 +93,7 @@ export class RoomPage implements OnInit, OnDestroy {
     // file reference
     const fileRef = this.storage.ref(path);
     // metadata
-    const customMetadata = { app: 'Chore Photo Gallery' };
+    const customMetadata = { app: 'chore-photos' };
 
     this.task = this.storage.upload(path, file, {customMetadata});
 
