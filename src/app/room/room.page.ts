@@ -16,6 +16,7 @@ import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
 
 
+
 @Component({
   selector: 'app-room',
   templateUrl: './room.page.html',
@@ -64,11 +65,13 @@ export class RoomPage implements OnInit, OnDestroy {
     this.photoService.addNewToGallery();
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     const id = this.route.snapshot.paramMap.get("id");
     this.roomSubscription = this.roomService.getRoom(id).subscribe((room) => {
       this.room = room;
     });
+
+    await this.photoService.loadSaved();
   }
 
   ngOnDestroy() {
