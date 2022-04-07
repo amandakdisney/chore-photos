@@ -6,15 +6,17 @@ import { AlertController, IonList } from '@ionic/angular';
 import { RoomService } from '../services/room.service';
 import { Room } from '../interfaces/room';
 import { UserPhoto } from '../interfaces/room-photo';
+import { PhotoService } from '../services/photo.service';
 import { Subscription } from 'rxjs';
 
-import { PhotoService } from '../services/photo.service';
+
 
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/compat/storage';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
 
+import { ActionSheetController } from '@ionic/angular';
 
 
 @Component({
@@ -48,11 +50,12 @@ export class RoomPage implements OnInit, OnDestroy {
 
   constructor(
     public photoService: PhotoService,
+    public actionSheetController: ActionSheetController,
     private alertCtrl: AlertController,
     private route: ActivatedRoute,
     private roomService: RoomService,
     private storage: AngularFireStorage,
-    private database: AngularFirestore
+    private database: AngularFirestore,
     ) {
       this.isUploading = false;
     this.isUploaded = false;

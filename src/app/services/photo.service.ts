@@ -40,7 +40,7 @@ export class PhotoService {
   private async savePicture(photo: Photo) {
     const base64Data = await this.readAsBase64(photo);
 
-    const fileName = new Date().getTime() + '.jpeg';
+    const fileName = new Date().getTime() + '.jpg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
@@ -105,9 +105,4 @@ export class PhotoService {
 
 }
 
-// Interface added here in myfirstapp tutorial, moved to interfaces/room-photo.ts
 
-// export interface UserPhoto {
-//   filepath: string;
-//   webviewPath: string;
-// }
