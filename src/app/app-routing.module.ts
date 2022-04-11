@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/rooms',  // when path is blank, redirect to main rooms page
+    redirectTo: '/rooms',
     pathMatch: 'full'
   },
   {

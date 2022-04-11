@@ -47,9 +47,9 @@ export class RoomService {
     await this.load();
 
     const newRoom = {
-      id: this.generateSlug(name),  //name might need to be title?
+      id: this.generateSlug(name),  
       name: name,
-      photos: [],  // photos was items
+      photos: [],
     };
 
     this.rooms = [...this.rooms, newRoom];
@@ -73,7 +73,6 @@ export class RoomService {
     this.rooms$.next(this.rooms);
     return this.storage.set("rooms", this.rooms);
   }
-  // name might need to change to title
   generateSlug(name: string): string {
     let slug = name.toLowerCase().replace(/\s+/g, "-");
 

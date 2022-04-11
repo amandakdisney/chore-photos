@@ -3,30 +3,30 @@
 // The list of file replacements can be found in `angular.json`.
 
 // MY FIREBASE
-export const environment = {
-  production: false,
-  firebaseConfig: {
-    apiKey: "AIzaSyBa8HczoSP5KI9kIH0W3uuiCr9LlvhYhJs",
-  authDomain: "chore-photos2-7a0fa.firebaseapp.com",
-  projectId: "chore-photos2-7a0fa",
-  storageBucket: "chore-photos2-7a0fa.appspot.com",
-  messagingSenderId: "492960833808",
-  appId: "1:492960833808:web:aed2aec85a8eb4109a0595"
-  }
-};
-
-// BILL'S FIREBASE
 // export const environment = {
 //   production: false,
 //   firebaseConfig: {
-//     apiKey: 'AIzaSyCqu9o7a3Pr5OX4QDQ0RGUVhCahpXVhGxk',
-//     authDomain: 'chore-photos-c1548.firebaseapp.com',
-//     projectId: 'chore-photos-c1548',
-//     storageBucket: 'chore-photos-c1548.appspot.com',
-//     messagingSenderId: '486847478967',
-//     appId: '1:486847478967:web:3528fab928c6f65f476132'
+//     apiKey: "AIzaSyBa8HczoSP5KI9kIH0W3uuiCr9LlvhYhJs",
+//   authDomain: "chore-photos2-7a0fa.firebaseapp.com",
+//   projectId: "chore-photos2-7a0fa",
+//   storageBucket: "chore-photos2-7a0fa.appspot.com",
+//   messagingSenderId: "492960833808",
+//   appId: "1:492960833808:web:aed2aec85a8eb4109a0595"
 //   }
 // };
+
+// SHARED FIREBASE
+export const environment = {
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyASqQdx1n9q5qNL6FGhlB8p1Onpwr7o8Uc",
+  authDomain: "chore-photos-10ab7.firebaseapp.com",
+  projectId: "chore-photos-10ab7",
+  storageBucket: "chore-photos-10ab7.appspot.com",
+  messagingSenderId: "1096834199269",
+  appId: "1:1096834199269:web:d89218b61fb59d552c2e0c"
+  }
+};
 
 /*
  * For easier debugging in development mode, you can import the following file

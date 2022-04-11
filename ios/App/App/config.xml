@@ -3,11 +3,11 @@
   <access origin="*" />
   
   <feature name="Camera">
-    <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
+    <param name="ios-package" value="CDVCamera"/>
   </feature>
 
   <feature name="SQLitePlugin">
-    <param name="android-package" value="io.sqlc.SQLitePlugin"/>
+    <param name="ios-package" value="SQLitePlugin"/>
   </feature>
 
   

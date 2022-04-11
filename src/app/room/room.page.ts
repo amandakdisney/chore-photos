@@ -65,7 +65,9 @@ export class RoomPage implements OnInit, OnDestroy {
     }
 
   addPhotoToGallery() {
-    this.photoService.addNewToGallery();
+    // old way
+    // this.photoService.addNewToGallery();
+    this.photoService.takeImage();
   }
 
   async ngOnInit() {
@@ -73,8 +75,8 @@ export class RoomPage implements OnInit, OnDestroy {
     this.roomSubscription = this.roomService.getRoom(id).subscribe((room) => {
       this.room = room;
     });
-
-    await this.photoService.loadSaved();
+    // old way, loaded in photos
+    // await this.photoService.loadSaved();
   }
 
   ngOnDestroy() {

@@ -14,12 +14,13 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 import { environment } from 'src/environments/environment';
-import { StatusBar } from '@capacitor/status-bar';
-import { SplashScreen } from '@capacitor/splash-screen';
+
+//importing Camera from ionic native instead of capacitor
+import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],  // environment.firebase  changed to environment.firebaseConfig??
+  entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -30,8 +31,8 @@ import { SplashScreen } from '@capacitor/splash-screen';
     AngularFireStorageModule
   ],
   providers: [
-    // StatusBar,
-    // SplashScreen,
+    // added Camera here
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
