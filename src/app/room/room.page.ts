@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { Photo } from '@capacitor/camera';
 
 import { ActivatedRoute } from '@angular/router';
 import { AlertController, IonList } from '@ionic/angular';
@@ -8,8 +7,6 @@ import { Room } from '../interfaces/room';
 import { UserPhoto } from '../interfaces/room-photo';
 import { PhotoService } from '../services/photo.service';
 import { Subscription } from 'rxjs';
-
-
 
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/compat/storage';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
@@ -65,8 +62,6 @@ export class RoomPage implements OnInit, OnDestroy {
     }
 
   addPhotoToGallery() {
-    // old way
-    // this.photoService.addNewToGallery();
     this.photoService.takeImage();
   }
 
@@ -75,8 +70,6 @@ export class RoomPage implements OnInit, OnDestroy {
     this.roomSubscription = this.roomService.getRoom(id).subscribe((room) => {
       this.room = room;
     });
-    // old way, loaded in photos
-    // await this.photoService.loadSaved();
   }
 
   ngOnDestroy() {
@@ -97,7 +90,7 @@ export class RoomPage implements OnInit, OnDestroy {
     this.isUploaded = false;
     this.fileName = file.name;
     // storage path
-    const path = `chore-photos/${new Date().getTime()}_${file.name}`;
+    const path = `chore-photos/${new Date().getTime()}_${file.name}_${this.room.name}`;
     // file reference
     const fileRef = this.storage.ref(path);
     // metadata
